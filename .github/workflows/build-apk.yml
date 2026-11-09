@@ -35,8 +35,10 @@ jobs:
 
       
       
+      
       - name: Extract Project
-        run: unzip TwitchAutoCollector_v1_2_source.zip -d source
+        run: unzip TwitchAutoCollector_v1_2_1_source.zip -d source
+
 
 
 
