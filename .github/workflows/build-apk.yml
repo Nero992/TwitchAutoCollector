@@ -54,8 +54,23 @@ jobs:
           p.write_text(s)
           PY
 
+      
+      - name: Fix Kotlin Code
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          p = Path("source/TwitchAutoCollector/app/src/main/java/tw/nero/twitchautocollector/TwitchAccessibilityService.kt")
+          s = p.read_text()
+          s = s.replace(
+              'val signature = "${candidate.text}|${candidate.viewIdResourceName}|${candidate.boundsInScreen}"',
+              'val signature = "${candidate.text}|${candidate.viewIdResourceName}"'
+          )
+          p.write_text(s)
+          PY
+
       - name: Build APK
         run: gradle -p source/TwitchAutoCollector assembleDebug
+
 
 
       - name: Upload APK
