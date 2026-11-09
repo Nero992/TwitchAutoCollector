@@ -33,8 +33,10 @@ jobs:
         with:
           gradle-version: '8.9'
 
+      
       - name: Extract Project
-        run: unzip twitch_auto_collector_project.zip -d source
+        run: unzip TwitchAutoCollector_v1_1_source.zip -d source
+
 
       
       - name: Fix Java Version
